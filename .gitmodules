@@ -1,0 +1,9 @@
+[submodule "uncertain-trees-experiments"]
+	path = uncertain-trees-experiments
+	url = git@github.com:thvasilo/uncertain-trees-experiments.git
+[submodule "moa"]
+	path = moa
+	url = git@github.com:thvasilo/moa.git
+[submodule "scikit-garden"]
+	path = scikit-garden
+	url = git@github.com:thvasilo/scikit-garden.git
