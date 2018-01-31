@@ -1,0 +1,15 @@
+name: rf-pred
+channels:
+  - defaults
+dependencies:
+ - python=3.5.4=h417fded_24
+ - joblib
+ - pandas
+ - scipy
+ - scikit-learn
+ - numpy
+ - matplotlib
+ - tqdm
+  - pip:
+    - liac-arff==2.1.1
+    - tabulate==0.8.2
