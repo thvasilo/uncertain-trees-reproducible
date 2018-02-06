@@ -27,7 +27,7 @@ pip install -e ./scikit-garden  # Install the customized scikit-garden repo.
 
 ### MOA
 
-We recommend using the pre-built binaries under `moa-binaries`. The only requirement
+We recommend using the pre-built binaries under `binaries`. The only requirement
 is Java 8. We've tested with the Oracle JDK, OpenJDK seems to causes issues with the
 results.
 
