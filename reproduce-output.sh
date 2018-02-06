@@ -1,4 +1,4 @@
-#!/usr/env/bin bash
+#!/usr/bin/env bash
 
 # NOTE: Reduce the number of repeats (--repeats argument) to speed up experiments.
 

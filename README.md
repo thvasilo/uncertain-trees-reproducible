@@ -30,9 +30,11 @@ pip install -e ./scikit-garden  # Install the customized scikit-garden repo.
 
 ### MOA
 
-We recommend using the pre-built binaries under `moa-binaries`.
+We recommend using the pre-built binaries under `moa-binaries`. The only requirement
+is Java 8. We've tested with the Oracle JDK, OpenJDK seems to causes issues with the
+results.
 
-Alternatively you can build the MOA distribution by running `mvn package -DskipTests` in `/moa/moa`.
+Alternatively you can build the MOA distribution using Maven by running `mvn package -DskipTests` in `moa/moa`.
 
 ## Obtaining the data
 
@@ -42,7 +44,7 @@ If you'd rather not use Git LFS we have included scripts to re-create the files.
 
 ### Using Git LFS (recommended)
 
-To install Git LFS:
+Install Git LFS:
 
 ```{bash}
 wget https://github.com/git-lfs/git-lfs/releases/download/v2.3.4/git-lfs-linux-amd64-2.3.4.tar.gz
@@ -51,9 +53,14 @@ cd git-lfs-2.3.4
 sudo ./install.sh
 ```
 
+Pull the files:
+
 If you haven't cloned the repo yet, then the `git clone --recursive https://github.com/thvasilo/uncertain-trees-reproducible.git`
 command will also get the large files one you have GIT LFS installed.
-If you've alread cloned the repository, `git lfs pull`  will pull the files.
+If you've already cloned the repository, `git lfs pull`  will pull the files.
+
+**NOTE**: It's possible this account runs out of Github LFS bandwidth. In that case follow the
+process below to create the files.
 
 ### Re-creating the files
 
@@ -67,19 +74,19 @@ You just need to run in succession:
 ```
 
 These two scripts will pull the original data, transform to csv,
-apply the pre-processing steps, and create the 700k, 2M and 5M splits in arff format.
+apply the pre-processing steps, and create the 700k, 2M and 5M splits in arff format using Weka.
 
 ## Running the experiments
 
-To re-run the experiments from the paper we can use the example commands
+After you've prepared the environment and data, to re-run the experiments from the paper we can use the example commands
 in `reproduce-output.sh`.
 
 **NOTE:** Due to the random nature of the algorithms the exact results will
-be different from those reported in the paper, unfortunately we didn't keep
+be slightly different from those reported in the paper, unfortunately we didn't keep
 track of all the random seeds used in our experiments. The overall performance
 of the algorithms should not change significantly however.
 
 ## Troubleshooting
 
-Ensure you did `git clone --recursive https://github.com/thvasilo/uncertain-trees-reproducible.git`
+Ensure you did `git clone --recursive https://github.com/thvasilo/uncertain-trees-reproducible.git`.
 Please file an issue if you run into any problems.
