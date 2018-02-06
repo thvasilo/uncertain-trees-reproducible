@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # NOTE: Reduce the number of repeats (--repeats argument) to speed up experiments.
+# You can also try increasing the number of jobs (--njobs) and --learner-threads.
 
 # cd into the uncertain-trees-experiments directory
 cd uncertain-trees-experiments
@@ -9,7 +10,7 @@ source activate rf-pred
 # Env var for the MOA jar file
 export MOA_JAR='../binaries/moa-2017.10-SNAPSHOT.jar'
 
-# Tables 3 & 4
+# MER and MIS tables
 # Expected runtime: 30 minutes+
 
 # Perform the MondrianForest experiments
@@ -22,7 +23,7 @@ python generate_figures.py --input output/results/small-mid/single/ --output out
 # The (unformatted) tables file will be created at output/figures/small-mid/mean_error_rate.means.tex and mean_interval_size.means.tex
 
 
-# Table 7
+# Significance level table
 # Expected runtime: 1 hour+
 
 # MondrianForest experiments
@@ -39,12 +40,12 @@ cp -r output/results/small-mid/mf-confidence/ output/results/small-mid/moa-confi
 parallel -q -j2 python generate_figures.py --input output/results/moa-confidence/{} --output output/figures/confidence/{} --dont-create-figures ::: OnlineQRF  OoBConformalApproximate  OoBConformalRegressor MondrianForest
 
 
-# Figure 2
+# Airlines experiments
 # Expected runtime: 24 hours+
-# NOTE: Reduced number of repeats to 5 from 10
+# NOTE: Removing OoBConformalRegressor from line 50 should bring the runtime to around 8 hours.
 
 # MF
-python skgarden_experiments.py  --input data/airlines/2M  --repeats 5 --window 1000 --njobs 4  --verbose 1 --output output/results/airlines/single/MondrianForest
+python skgarden_experiments.py  --input data/airlines/2M  --repeats 10 --window 1000 --njobs 4  --verbose 1 --output output/results/airlines/single/MondrianForest
 # CP & QRF
 ./parameter_sweep.py --command "python moa_experiments.py  --moajar $MOA_JAR --input data/airlines/2M  --repeats 5 --window 1000 --max-calibration-instances 1000 --learner-threads 4 --verbose 1" --output-prefix output/results/airlines/single/ --sweep-argument meta --argument-list OnlineQRF  OoBConformalApproximate OoBConformalRegressor --njobs 2
 
