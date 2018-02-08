@@ -1,3 +1,13 @@
+# Reprodibility repository for Online Regression Forests
+
+Using this repository you should be able to reproduce all the experiments
+we performed for our work on online regression forests.
+
+Follow the instructions to prepare you environment and data.
+The file `reproduce-output.sh` contains the commands to
+re-create the most important tables and figures in the
+paper.
+
 ## Instructions
 
 The repository uses submodules to keep track of the
@@ -59,7 +69,10 @@ apply the pre-processing steps, and create the 700k, 2M and 5M splits in arff fo
 ## Running the experiments
 
 After you've prepared the environment and data, to re-run the experiments from the paper we can use the example commands
-in `reproduce-output.sh`.
+in `reproduce-output.sh`. We recommend running the experiments ad-hoc and not
+simply running the script, because the runtime for the airlines experiments is
+very long. The experiments on the small-scale data should not take very
+long however.
 
 **NOTE:** Due to the random nature of the algorithms the exact results will
 be slightly different from those reported in the paper, unfortunately we didn't keep

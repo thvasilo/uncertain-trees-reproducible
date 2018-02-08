@@ -12,7 +12,7 @@ export MOA_JAR='./binaries/moa-2017.10-SNAPSHOT.jar'
 # Expected runtime: 30 minutes+
 
 # Perform the MondrianForest experiments
-python uncertain-trees-experiments/skgarden_experiments.py  --input data/small-mid  --repeats 10 --window 1000 --njobs 4  --verbose 1 --output output/results/small-mid/single/MondrianForest
+python uncertain-trees-experiments/skgarden_experiments.py  --input data/small-mid  --repeats 10 --window 1000 --njobs 4  --verbose 1 --output output/results/small-mid/single/MondrianForest --overwrite
 # Perform the CP and OnlineQRF experiments
 uncertain-trees-experiments/parameter_sweep.py --command "python uncertain-trees-experiments/moa_experiments.py  --moajar $MOA_JAR --input ./data/small-mid  --repeats 10 --window 1000 --njobs 4 --max-calibration-instances 1000  --learner-threads 1 --verbose 1 --overwrite" --output-prefix output/results/small-mid/single/ --sweep-argument meta --argument-list OnlineQRF  OoBConformalApproximate OoBConformalRegressor
 
@@ -40,7 +40,7 @@ parallel -q -j2 python uncertain-trees-experiments/generate_figures.py --input o
 
 # Airlines experiments
 # Expected runtime: 24 hours+
-# NOTE: Removing OoBConformalRegressor from line 50 should bring the runtime to  4-8 hours.
+# NOTE: Removing OoBConformalRegressor should bring the runtime to  4-8 hours.
 
 # MF
 python uncertain-trees-experiments/skgarden_experiments.py  --input data/airlines/2M  --repeats 10 --window 1000 --njobs 4  --verbose 1 --output output/results/airlines/single/MondrianForest
