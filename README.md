@@ -1,4 +1,4 @@
-# Reprodibility repository for Online Regression Forests
+# Reproducibility repository for Online Regression Forests
 
 Using this repository you should be able to reproduce all the experiments
 we performed for our work on online regression forests.
@@ -38,7 +38,7 @@ pip install -e ./scikit-garden  # Install the customized scikit-garden repo.
 ### MOA
 
 We recommend using the pre-built binaries under `binaries`. The only requirement
-is Java 8. We've tested with the Oracle JDK, OpenJDK seems to causes issues with the
+is Java 8. We've tested with the Oracle JDK, OpenJDK seems to cause issues with the
 results.
 
 Alternatively you can build the MOA distribution using Maven by running `mvn package -DskipTests` in `moa/moa`.
