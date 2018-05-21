@@ -1,7 +1,7 @@
 # Reproducibility repository for Online Regression Forests
 
 Using this repository you should be able to reproduce all the experiments
-we performed for our work on online regression forests.
+we performed for our work on online regression forests with uncertainty.
 
 Follow the instructions to prepare you environment and data.
 The file `reproduce-output.sh` contains the commands to
@@ -45,12 +45,14 @@ Alternatively you can build the MOA distribution using Maven by running `mvn pac
 
 ## Obtaining the data
 
-The small scale data are included with the repository under the `data/small-mid` directory.
+The stationary data are included with the repository under the `data/small-mid` directory.
 The large airlines data are compressed under `data/airlines`. To decompress them, `cd` into
 `data/airlines` and run:
 ```bash
 for FILE in *.tar.gz; do tar -zxf ${FILE}; done
 ```
+
+To re-create the Friedman data run the `generate_friedman_data.sh` script.
 
 ### Re-creating the files
 
@@ -69,7 +71,7 @@ apply the pre-processing steps, and create the 700k, 2M and 5M splits in arff fo
 ## Running the experiments
 
 After you've prepared the environment and data, to re-run the experiments from the paper we can use the example commands
-in `reproduce-output.sh`. We recommend running the experiments ad-hoc and not
+in `reproduce-output.sh`. We recommend running the experiments selectively and not
 simply running the script, because the runtime for the airlines experiments is
 very long. The experiments on the small-scale data should not take very
 long however.
