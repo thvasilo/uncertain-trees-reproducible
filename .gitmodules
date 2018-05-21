@@ -4,6 +4,7 @@
 [submodule "moa"]
 	path = moa
 	url = git@github.com:thvasilo/moa.git
+	branch = submission
 [submodule "scikit-garden"]
 	path = scikit-garden
 	url = git@github.com:thvasilo/scikit-garden.git
