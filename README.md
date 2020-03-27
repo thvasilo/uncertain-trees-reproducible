@@ -1,7 +1,7 @@
 # Reproducibility repository for Online Regression Forests
 
 Using this repository you should be able to reproduce all the experiments
-we performed for [JMLR paper](http://www.jmlr.org/papers/v20/19-006.html) on online regression forests with uncertainty.
+we performed for our [JMLR paper](http://www.jmlr.org/papers/v20/19-006.html) on online regression forests with uncertainty.
 
 Follow the instructions to prepare you environment and data.
 The file `reproduce-output.sh` contains the commands to
