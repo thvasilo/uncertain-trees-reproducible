@@ -1,7 +1,7 @@
 # Reproducibility repository for Online Regression Forests
 
 Using this repository you should be able to reproduce all the experiments
-we performed for our work on online regression forests with uncertainty.
+we performed for [JMLR paper](http://www.jmlr.org/papers/v20/19-006.html) on online regression forests with uncertainty.
 
 Follow the instructions to prepare you environment and data.
 The file `reproduce-output.sh` contains the commands to
@@ -85,3 +85,20 @@ of the algorithms should not change significantly however.
 
 Ensure you did `git clone --recursive https://github.com/thvasilo/uncertain-trees-reproducible.git`.
 Please file an issue if you run into any problems.
+
+## Citing
+
+If you use this work please cite our JMLR paper:
+
+```
+@article{JMLR:v20:19-006,
+  author  = {Theodore Vasiloudis and Gianmarco De Francisci Morales and Henrik Bostr{{\"o}}m},
+  title   = {Quantifying Uncertainty in Online Regression Forests},
+  journal = {Journal of Machine Learning Research},
+  year    = {2019},
+  volume  = {20},
+  number  = {155},
+  pages   = {1-35},
+  url     = {http://jmlr.org/papers/v20/19-006.html}
+}
+```
